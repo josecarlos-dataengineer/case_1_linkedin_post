@@ -2,6 +2,28 @@
 
 Um dataset pequeno e simples aqui para exercitar a capacidade de questionar e analisar padrões de dados. <br>
 
+## Criação da tabela de exemplo.
+Primeiramente, no SQL crie uma tabela com as seguintes colunas, conforme a seguir:
+```
+CREATE TABLE case_1 (
+
+	[nome] VARCHAR(50),
+	[idade] INT,
+	[estado] VARCHAR(50),
+	[operacao] VARCHAR(50),
+	[quantidade] INT,
+	[canal_venda] VARCHAR(50),
+	[data_] DATE
+	)
+```
+Em seguida clone este repositório.
+
+Após criar a tabela e clonar o repositório, acesse o arquivo create_example.py, pois este contém o script que criará o Pandas Dataframe de exemplo e carregará os dados no SQL. 
+Para executar o arquivo, siga os seguintes passos:
+* 1 - Crie um ambiente virtual, usando o método de sua preferência. Aqui usei ***python -m venv*** e em seguida ative o ambiente virtual.
+* 2 - Abra o terminal e acesse a pasta clonada.
+* 3 - No terminal, execute ***pip install -r requirements.txt***, e com isso as dependências serão instaladas no ambiente virtual.
+
 ```
 SELECT TOP (10) [nome]
       ,[idade]
@@ -150,3 +172,5 @@ PIVOT
 	ORDER BY 
 		percentual_trocas_devolucoes DESC
 ```
+
+Esse último ***SELECT*** traz o top 10 ofensores de devoluções e trocas respondendo a pergunta feita no início. Caso consultar a tabela OBT, basta alterar o ***FROM*** e deletar o ***ORDER BY***

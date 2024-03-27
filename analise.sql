@@ -16,7 +16,7 @@ SELECT
 	SUM([quantidade]) OVER (PARTITION BY operacao,canal_venda) AS qt_operacao_canal_venda,
 	SUM([quantidade]) OVER (PARTITION BY operacao) AS qt_operacao
 
-FROM [dbo].[index_teste]
+FROM [dbo].[case_1]
 )
 
 
@@ -27,7 +27,7 @@ analise_etaria AS (
 SELECT
 	[sk],	
 	AVG([idade]) OVER (PARTITION BY [estado]) AS idade_media_estado,
-	(SELECT AVG([idade]) FROM [dbo].[index_teste]) AS idade_media_BR,
+	(SELECT AVG([idade]) FROM [dbo].[case_1]) AS idade_media_BR,
 	CASE
 		WHEN [idade] < 30 THEN '18 +' 
 		WHEN [idade] < 40 THEN '30 +' 
