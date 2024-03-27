@@ -13,15 +13,16 @@ SELECT TOP (10) [nome]
   FROM [estudos].[dbo].[index_teste]
 ```
  <br>
+ 
 ![alt text](imagens/exemplo.png)
 
 A ideia aqui é responder a pergunta:  <br>
 Qual faixa etária mais faz devoluções e trocas por estado e canal de compra?
 
 Para responder essa pergunta e outras, vamos usar alguns recursos bem úteis e interassantes do SQL SERVER:  <br>
-CTE: "Especifica um conjunto de resultados nomeado temporário, conhecido como uma CTE (expressão de tabela comum). Ela é derivada de uma consulta simples e definida no escopo de execução de uma única instrução SELECT, INSERT, UPDATE, DELETE ou MERGE. Esta cláusula também pode ser usada em uma instrução CREATE VIEW como parte da instrução SELECT que a define. Uma expressão de tabela comum pode incluir referências a si mesma. É o que chamamos de expressão de tabela comum recursiva." [fonte site Microsoft](https://learn.microsoft.com/pt-br/sql/t-sql/queries/with-common-table-expression-transact-sql?view=sql-server-ver16) <br>
-Window Functions: Funções de agregação sobre partições definidas pelo usuário
-Builtin Functions: ROW_NUMBER, SUM, AVG, MAX
+* CTE: "Especifica um conjunto de resultados nomeado temporário, conhecido como uma CTE (expressão de tabela comum). Ela é derivada de uma consulta simples e definida no escopo de execução de uma única instrução SELECT, INSERT, UPDATE, DELETE ou MERGE. Esta cláusula também pode ser usada em uma instrução CREATE VIEW como parte da instrução SELECT que a define. Uma expressão de tabela comum pode incluir referências a si mesma. É o que chamamos de expressão de tabela comum recursiva." [fonte site Microsoft](https://learn.microsoft.com/pt-br/sql/t-sql/queries/with-common-table-expression-transact-sql?view=sql-server-ver16) <br>
+* Window Functions: Funções de agregação sobre partições definidas pelo usuário
+* Builtin Functions: ROW_NUMBER, SUM, AVG, MAX
 
 ```
 WITH agregacao AS (
