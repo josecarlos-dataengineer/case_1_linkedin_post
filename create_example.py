@@ -1,5 +1,4 @@
-import sys
-sys.path.append(r"C:\Users\SALA443\Desktop\linkedin_posts\linkedin_post\Lib\site-packages")
+
 # Sessão 1: Importação das bibliotecas
 import datetime
 import pandas as pd
