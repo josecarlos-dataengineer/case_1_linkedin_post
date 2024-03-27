@@ -28,6 +28,15 @@ CTE: Aqui vamos utilizá-la para construir a análise em etapas. A sintaxe da CT
 Aqui a graça da utilização é poder recorrer a cada consulta criada em uma próxima consulta. No exemplo abaixo, pode-se ver que a consulta ***agregação*** é usada para gerar uma segunda consulta chamada ***analise_etaria***, e essa por sua vez é utilizada como inner join para a criação da ***OBT***. 
 Sobre o uso da CTE, é importante mencionar que o resultado dos datasets é armazenado em memória, então em casos de consultas muito grandes e complexas é possível haver problemas de OOM (Out of memory); uma boa abordagem para utilizar CTE em consultas grandes e complexas é reduzir o tamanho do dataset através de filtragem. <br>
 Aqui neste estudo o dataset é pequeno e por isso é possível explorar bem sua utilidade. Uma vantagem que particularmente gosto muito da CTE é a legibilidade facilitada, é possível reduzir a complexidade se compararmos com uma abordagem utilizando sub-queries.
+
+Window Functions: Aqui foram utilizadas algumas agregações particionadas, por exemplo:
+
+```
+SUM([quantidade]) OVER (PARTITION BY estado,operacao,canal_venda) AS qt_estado_operacao_canal_venda
+```
+Acima está sendo somada a coluna quantidade particionando por estado, operação, e canal de venda. Pode-se acrescentar parâmetros que alterem o comportamento da agregação, mas nesse caso não houve necessidade. Vale a pena dar uma olhada na documentação, caso queira explorar mais opções. [Documentação](https://learn.microsoft.com/en-us/sql/t-sql/queries/select-window-transact-sql?view=sql-server-ver16)
+Toda vez que notar uma função de agregação, como SUM, MAX, MIN seguida por OVER (PARTITION BY) ou (ORDER BY) trata-se de uma Window function.
+
 ```
 WITH agregacao AS (
 SELECT 
