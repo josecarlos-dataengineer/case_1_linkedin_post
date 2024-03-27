@@ -1,4 +1,7 @@
 # case_1_linkedin_post
+Requisitos:
+* Banco de dados SQL
+* Python
 
 Um dataset pequeno e simples aqui para exercitar a capacidade de questionar e analisar padrões de dados. <br>
 
