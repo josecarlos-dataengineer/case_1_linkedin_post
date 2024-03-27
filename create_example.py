@@ -54,12 +54,12 @@ df = pd.DataFrame.from_records(data=data, columns=['nome','idade','estado','oper
 
 # Conexão com o banco de dados *Aqui está sendo usado SQL Server, mas vc pode ajustar a 
 # conn para o banco de sua preferência
-conn = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER=DESKTOP-DD8P4JN;DATABASE=estudos;UID=sa;PWD=jotace007')
+conn = pyodbc.connect(f'DRIVER={{SQL Server}};SERVER=*********;DATABASE=******;UID=****;PWD=******')
 
 cursor = conn.cursor()
 
 for index, row in df.iterrows():
-     cursor.execute("INSERT INTO dbo.index_teste (nome,idade,estado,operacao,quantidade,canal_venda,[data_]) values(?,?,?,?,?,?,?)", (row.nome, row.idade, row.estado, row.operacao, row.quantidade, row.canal_venda, row.data_))
+     cursor.execute("INSERT INTO dbo.case_1 (nome,idade,estado,operacao,quantidade,canal_venda,[data_]) values(?,?,?,?,?,?,?)", (row.nome, row.idade, row.estado, row.operacao, row.quantidade, row.canal_venda, row.data_))
 
 conn.commit()
 cursor.close()
