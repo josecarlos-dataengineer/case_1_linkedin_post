@@ -32,7 +32,7 @@ SELECT TOP (10) [nome]
       ,[quantidade]
       ,[canal_venda]
       ,[data_]
-  FROM [estudos].[dbo].[index_teste]
+  FROM [estudos].[dbo].[case_1]
 ```
  <br>
 
@@ -59,6 +59,8 @@ SUM([quantidade]) OVER (PARTITION BY estado,operacao,canal_venda) AS qt_estado_o
 Acima está sendo somada a coluna quantidade particionando por estado, operação, e canal de venda. Pode-se acrescentar parâmetros que alterem o comportamento da agregação, mas nesse caso não houve necessidade. Vale a pena dar uma olhada na documentação, caso queira explorar mais opções. [Documentação](https://learn.microsoft.com/en-us/sql/t-sql/queries/select-window-transact-sql?view=sql-server-ver16)
 Toda vez que notar uma função de agregação, como SUM, MAX, MIN seguida por OVER (PARTITION BY) ou (ORDER BY) trata-se de uma Window function.
 
+A consulta descrita abaixo é apenas para exemplificar. Para executar a consulta utilize o arquivo analise.sql, contido nesta pasta.
+
 ```
 WITH agregacao AS (
 SELECT 
@@ -77,7 +79,7 @@ SELECT
 	SUM([quantidade]) OVER (PARTITION BY operacao,canal_venda) AS qt_operacao_canal_venda,
 	SUM([quantidade]) OVER (PARTITION BY operacao) AS qt_operacao
 
-FROM [dbo].[index_teste]
+FROM [dbo].[case_1]
 )
 
 
@@ -88,7 +90,7 @@ analise_etaria AS (
 SELECT
 	[sk],	
 	AVG([idade]) OVER (PARTITION BY [estado]) AS idade_media_estado,
-	(SELECT AVG([idade]) FROM [dbo].[index_teste]) AS idade_media_BR,
+	(SELECT AVG([idade]) FROM [dbo].[case_1]) AS idade_media_BR,
 	CASE
 		WHEN [idade] < 30 THEN '18 +' 
 		WHEN [idade] < 40 THEN '30 +' 
