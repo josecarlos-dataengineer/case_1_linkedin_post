@@ -27,7 +27,7 @@ Para responder essa pergunta e outras, vamos usar alguns recursos bem úteis e i
 CTE: Aqui vamos utilizá-la para construir a análise em etapas. A sintaxe da CTE é bem simples, basta iniciar a consulta com WITH <nome de sua preferência> AS (Consulta).
 Aqui a graça da utilização é poder recorrer a cada consulta criada em uma próxima consulta. No exemplo abaixo, pode-se ver que a consulta ***agregação*** é usada para gerar uma segunda consulta chamada ***analise_etaria***, e essa por sua vez é utilizada como inner join para a criação da ***OBT***. 
 Sobre o uso da CTE, é importante mencionar que o resultado dos datasets é armazenado em memória, então em casos de consultas muito grandes e complexas é possível haver problemas de OOM (Out of memory); uma boa abordagem para utilizar CTE em consultas grandes e complexas é reduzir o tamanho do dataset através de filtragem. <br>
-Aqui neste estudo o dataset é pequeno e por isso é possível explorar bem sua utilidade.
+Aqui neste estudo o dataset é pequeno e por isso é possível explorar bem sua utilidade. Uma vantagem que particularmente gosto muito da CTE é a legibilidade facilitada, é possível reduzir a complexidade se compararmos com uma abordagem utilizando sub-queries.
 ```
 WITH agregacao AS (
 SELECT 
