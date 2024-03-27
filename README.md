@@ -179,3 +179,6 @@ PIVOT
 ```
 
 Esse último ***SELECT*** traz o top 10 ofensores de devoluções e trocas respondendo a pergunta feita no início. Caso consultar a tabela OBT, basta alterar o ***FROM*** e deletar o ***ORDER BY***
+
+### Observações sobre o Dataset.
+Como os dados são gerados aleatóriamente, pode haver casos em que haja mais devoluções e trocas do que compras quando olhando para um mês específico. A ideia aqui foi só explorar algumas possibilidades de análise.
