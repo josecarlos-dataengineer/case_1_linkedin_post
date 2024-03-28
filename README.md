@@ -3,7 +3,7 @@ Requisitos:
 * Banco de dados SQL
 * Python
 
-Um dataset pequeno e simples aqui para exercitar a capacidade de questionar e analisar padrões de dados. <br>
+Um dataset pequeno e simples aqui para exercitar a capacidade de questionar e analisar padrões de dados usando SQL. <br>
 
 ## Criação da tabela de exemplo.
 Primeiramente, no SQL crie uma tabela com as seguintes colunas, conforme a seguir:
