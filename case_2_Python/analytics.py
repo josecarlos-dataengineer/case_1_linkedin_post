@@ -1,5 +1,3 @@
-import sys
-sys.path.append(r'C:\Users\SALA443\Desktop\linkedin_posts\linkedin_post\Lib\site-packages')
 
 import pandas as pd
 import numpy as np

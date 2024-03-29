@@ -7,4 +7,4 @@ Qual faixa etária mais faz devoluções e trocas por estado e canal de compra? 
 Repositório | Documentação
 ------------| ------------
 case_1_SQL | [Readme](https://github.com/josecarlos-dataengineer/cases/blob/main/case_1_SQL/Case1.md)
-case_2_Python |
+case_2_Python | [Readme](https://github.com/josecarlos-dataengineer/cases/blob/main/case_2_Python/Case2.md)
